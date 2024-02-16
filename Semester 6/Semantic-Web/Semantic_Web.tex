@@ -27,13 +27,13 @@
 \pagestyle{fancy} 
 	\fancyhf{} 
 	\fancyhead[L]{\includegraphics[scale=0.05]{Bilder/dhbw.png}} 
-	\fancyhead[C]{\slshape Formale Sprachen und Automaten} 
+	\fancyhead[C]{\slshape Semantic Web} 
 	\fancyhead[R]{\slshape LaTeX Version}
 	\fancyfoot[C]{\thepage}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 
-\title{Formale Sprachen und Automaten}
+\title{Semantic Web}
 \author{\slshape Robin Rausch, Ozan Akzebe, Florian Maslowski}
 \date{\slshape \today}
 \begin{document}
@@ -42,8 +42,61 @@
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
-\section{Grundlagen}
+
+\section{Einführung}
 	\subsection{Wissensbank}
-		Eine Wissensbank ist 
+		Eine Wissensbank speichert formalisiertes Wissen. Hat WR-Sprache mit Syntax und Semantik. terminologischen Informationen
+
+	\subsection{Inferenzmaschine}
+		Eine Inferenzmaschine leitet implizietes Wissen ab. Ist also ein Schlussfolgerungsverfahren.
+
+	\subsection{Semantische Netze}
+		Bestehen aus Knoten und Kanten. Knoten repräsentieren Individuen, Klassen und Eigenschaften. Kanten repräsentieren is-a und has-prop Beziehungen.\\
+		\textbf{Problematik:}
+		\begin{itemize}
+			\item Mehrdeutigkeit von is-a
+			\item Vererbung als default (keine terminologischen Infos)
+			\item \glqq Semantischer Abstand\grqq{} abhängig von syntaktischer Details
+			\item keine formale Semantik
+			\item Netzwerk bedeuted was Ersteller meint
+			\item Konflikte zwischen Benutzer und Programmierer nicht entscheidbar
+		\end{itemize}
+
+	\subsection{Frames}
+		WR-Formalismus zum Beschreiben von Entitäten. Das Ziel war die Imitation von menschlichem Kategorisieren. Logisches Schließen sollte nicht möglich sein. Trennung von repräsntiertem Wissen und Schlussfolgerungsverfahren seien zu radikal. \\
+		\textbf{Syntax:}
+		\begin{description}
+			\item[Class Frame] beschreibt Klasse von Entitäten
+			\item[Instance Frame] beschreibt spezifische Entität 
+			\item[slots] Frame enthält slots für bestimmte Attribute
+			\item[filler] Wert eines slots wird filler genannt
+			\item[Defaults] für filler sind möglich
+			\item[Sub-frames] für Spezialisierung (is-a)
+		\end{description}
+		\textbf{Schlussfolgerungsverfahren:}
+		\begin{description}
+			\item[Vererbung] Sub-frames erben von Default-filler
+			\item[Kriterialität] Wenn Instanz für alle Slots der Class Frame Y einen passenden Filler hat ist diese auch Instanz von Frame Y
+			\item[Matching] Test ob Instanz eines Frames X auch Instanz des Frames Y ist 
+		\end{description}
+		\textbf{Probleme von Frames:}
+		Frame-Inferenzen lassen sich in Prädikatenlogik ausdrücken und KI als Sammlung von Heuristiken.
+
+	\subsection{Semantische Technologien}
+		In anderen Worten \glqq Wann wird es Wahr?\grqq.
+
+		\subsubsection{Syntax und Semantik}
+			$4+=12($ ist syntaktisch falsch. \\
+			$3 + 4 = 12$ ist syntaktisch richtig, aber semantisch falsch. \\
+			$3 + 4 = 7$ ist syntaktisch und semantisch richtig.
+
+		\subsubsection{Weitere Begriffe}
+			Semantische Technologien sind Teilbereich der KI und beschreiben formale Beschreibung in einer Domäne.\\
+			Semantic Web ist eine Erweiterung des WWW, die es ermöglicht, Daten mit Bedeutung zu versehen.\\
+			Linked Data ist eine Methode, um Daten im Web zu verknüpfen.\\
+			Ontologie ist die Lehre vom \glqq Seienden\grqq. Also unveränderliche und unvergängliche Ideen. Der Gegenbegriff wäre \glqq Werdendes\grqq. In der Informatik ist die Ontologie repräsentiertes Wissen. Beispielsweise Inhalt einer Wissensbank oder Instanzen von Klassen. \textcolor{red}{Ontologie besser beschreiben/definieren}
+		
+	\section{Linked Data, URIs und RDF}
+		sample
 
 \end{document}
