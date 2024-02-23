@@ -110,5 +110,66 @@
 		\subsection{RDF}
 			Resource Description Framework. Wird verwendet um Aussagen über Ressourcen zu machen. Besteht aus URIs, Literale und Leeren Knoten. URIs sind Namen für Ressourcen. Literale sind Werte. Leere Knoten sind anonyme Ressourcen.\\
 			RDF-Graph ist eine Menge von Tripeln. Tripel besteht aus Subjekt, Prädikat und Objekt.\\
+			\begin{description}
+				\item[Subjekt] URI oder leerer Knoten
+				\item[Prädikat] URI
+				\item[Objekt] URI, Literal oder leerer Knoten  
+			\end{description}
+			Als Syntax für RDF gibts XML, Notation 3, N-Triples und Terse Triple Language. Wir benutzen ausschließlich Turse Triple Language(TTL, bzw. \glqq Trutle\grqq).\\
+			\textbf{Beispiel:}\\
+			\includegraphics[width=\textwidth]{Bilder/TTL_example.PNG}
+			\textbf{Beispiel in abgekürzter Version:}\\
+			\includegraphics[width=\textwidth]{Bilder/short_TTL_example.PNG}
+			\textbf{Weitere Beispiele:}\\
+			\includegraphics[width=\textwidth]{Bilder/TTL_more_examples.PNG}
+
+			\subsubsection{Datentypen}
+				Standardmäßig sind alles Literale (\glqq100\grqq{} < \glqq 11\grqq) ähnlich wie Strings. Datentypen können aber auch explizit angegeben werden werden.\\
+				\includegraphics[width=\textwidth]{Bilder/datentypen_TTL.PNG}
+				Um den Datentyp angzugeben, muss dieser Syntax eingehalten werden:
+				\begin{verbatim}
+					ex:name "Springer Verlag"^^xsd:string ;
+				\end{verbatim}
+				Sprachinformationen werden folgendermaßen angegeben:
+				\begin{verbatim}
+					<http://springer.com/Verlag> ex:name "Springer Verlag"@de ,
+					                                     "Springer Science+Business Media"@en .
+				\end{verbatim}
+				Der Datentyp hier lautet rdf:langString.
+			
+			\subsubsection{Leere Knoten}
+				\includegraphics[width=\textwidth]{Bilder/bnodes.PNG}
+				\includegraphics[width=\textwidth]{Bilder/bnode_example.PNG}
+				\includegraphics[width=\textwidth]{Bilder/visualisiert_example_bnodes.PNG}
+			
+			\subsubsection{Mehrwertige Beziehungen}
+				Mehrwertige Beziehungen wie in einem Rezept beispielsweise (Liste an Zutaten mit Mengenangaben) sind in RDF nicht möglich. Hierzu müssen Hilfsknoten verwendet werden:\\
+				\includegraphics[width=\textwidth]{Bilder/hilfsknoten.PNG}
+				Da ChutneyZutat1 ein blöder Begriff ist, kann das durch BNodes (Leere Knoten) ersetzt werden:\\
+				\includegraphics[width=\textwidth]{Bilder/bnode_hilfsknoten.PNG}
+			
+			\subsubsection{Listen}
+				Für Listen in RDF gibt es zwei Varianten:\\
+				\includegraphics[width=\textwidth]{Bilder/rdf_listen.PNG}
+				\textbf{Beispiel für Listentyp Container:}\\
+				\includegraphics[width=\textwidth]{Bilder/listen_beispiel.PNG}
+				\textbf{Iterieren durch eine Liste:}\\
+				\includegraphics[width=\textwidth]{Bilder/liste_iterieren.PNG}
+
+			\subsubsection{RDF Vokabular}
+				\includegraphics[width=\textwidth]{Bilder/properties.PNG}
+
+			\subsubsection{Zusammenfassung RDF}
+				RDF ist universeller Standard für Speicherung und Austausch von Daten. Graphen-basiert und leicht zu verstehen. Unterstützt global eindeutige Variablen.\\
+				Die Grenzen von RDF sind, dass der Schwerpunkt auf Individuen liegt (Faktenwissen), kaum Möglichkeiten zur Kodierung von Schemawissen exsitiert und dass RDF eine intuitive Semantik hat (Bedeutungen von Vokabularen müssen Autoren im Kopf bleiben).
+
+		\subsection{RDFS}
+			sample
+
+		\subsection{Semantik}
+			sample
+	
+	\section{SPARQL}
+		sample
 
 \end{document}
